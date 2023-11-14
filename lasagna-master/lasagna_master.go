@@ -1,8 +1,5 @@
 package lasagna
 
-import "fmt"
-
-// TODO: define the 'PreparationTime()' function
 // PreparationTime returns the cooking time for lasagna depending
 // on the number of layers and the average cooking time per layer.
 func PreparationTime(layers []string, timeForLayers int) int {
@@ -14,7 +11,6 @@ func PreparationTime(layers []string, timeForLayers int) int {
 	return len(layers) * timeForLayers
 }
 
-// TODO: define the 'Quantities()' function
 // Quantities determines the quantity of noodles and sauce needed to make meal.
 func Quantities(layers []string) (noodles int, sauce float64) {
 	for _, elem := range layers {
@@ -27,20 +23,17 @@ func Quantities(layers []string) (noodles int, sauce float64) {
 	return
 }
 
-// TODO: define the 'AddSecretIngredient()' function
+// AddSecretIngredient replaces secret ingredient in myList from friendList.
 func AddSecretIngredient(friendsList, myList []string) {
 	myList[len(myList)-1] = friendsList[len(friendsList)-1]
 }
 
-// TODO: define the 'ScaleRecipe()' function
+// ScaleRecipe returns the amounts needed for the desired number of portions.
 func ScaleRecipe(slices []float64, count int) []float64 {
-	fmt.Println(len(slices))
-	quantities := make([]float64, len(slices))
-
+	var quantities []float64
 	for _, elem := range slices {
-		quantities = append(quantities, (elem/2)*float64(count))
+		quantities = append(quantities, elem/2*float64(count))
 	}
-
 	return quantities
 }
 
